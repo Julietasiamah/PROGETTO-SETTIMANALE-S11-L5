@@ -21,9 +21,9 @@ const MainSection = () => {
   };
 
   useEffect(() => {
-    fillMusicSection("Rock", setRock);
-    fillMusicSection("Pop", setPop);
-    fillMusicSection("HipHop", setHipHop);
+    fillMusicSection("queen", setRock);
+    fillMusicSection("kattyperry", setPop);
+    fillMusicSection("eminem", setHipHop);
   }, []);
 
   return (

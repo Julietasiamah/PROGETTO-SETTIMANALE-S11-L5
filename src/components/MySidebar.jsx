@@ -36,11 +36,13 @@ const MySidebar = () => {
                   GO
                 </Button>
               </InputGroup>
-              <Button id="sign-up">Sign up</Button>
-              <Button id="login">Login</Button>
-              <span>
-                <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>
-              </span>
+              <div className="mt-5">
+                <Button id="sign-up">Sign up</Button>
+                <Button id="login">Login</Button>
+                <span>
+                  <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>
+                </span>
+              </div>
             </Container>
           </Navbar>
         </Col>
