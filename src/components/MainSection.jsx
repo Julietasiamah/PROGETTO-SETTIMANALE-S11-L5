@@ -36,7 +36,7 @@ const MainSection = () => {
   return (
     <Col md={9} className="offset-md-3 mainPage">
       <Row>
-        <Col lg={11} className="mainLinks d-none d-md-flex">
+        <Col lg={11} className="mainLinks d-none d-md-flex mt-3">
           <a href="#">TRENDING</a>
           <a href="#">PODCAST</a>
           <a href="#">MOODS AND GENRES</a>
