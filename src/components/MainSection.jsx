@@ -73,16 +73,25 @@ const MainSection = () => {
                     <Col key={song.id} className="mb-3">
                       <img src={song.album.cover_medium} alt={song.title} />
                       <p>{song.title}</p>
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() =>
-                          isFavourite
-                            ? dispatch(addToFavouritesAction(song.id))
-                            : dispatch(removeFromFavouritesAction(song))
-                        }
-                      >
-                        {isFavourite ? <HeartFill /> : <Heart />}
-                      </Button>
+                      {isFavourite ? (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(addToFavouritesAction(song.id));
+                          }}
+                        >
+                          <Heart />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(removeFromFavouritesAction(song.id));
+                          }}
+                        >
+                          <HeartFill color="red" />
+                        </Button>
+                      )}
                     </Col>
                   );
                 })}
@@ -102,16 +111,25 @@ const MainSection = () => {
                     <Col key={song.id} className="mb-3">
                       <img src={song.album.cover_medium} alt={song.title} />
                       <p>{song.title}</p>
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() =>
-                          isFavourite
-                            ? dispatch(addToFavouritesAction(song.id))
-                            : dispatch(removeFromFavouritesAction(song))
-                        }
-                      >
-                        {isFavourite ? <HeartFill /> : <Heart />}
-                      </Button>
+                      {isFavourite ? (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(removeFromFavouritesAction(song.id));
+                          }}
+                        >
+                          <Heart />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(addToFavouritesAction(song));
+                          }}
+                        >
+                          <HeartFill color="red" />
+                        </Button>
+                      )}
                     </Col>
                   );
                 })}
@@ -131,16 +149,25 @@ const MainSection = () => {
                     <Col key={song.id} className="mb-3">
                       <img src={song.album.cover_medium} alt={song.title} />
                       <p>{song.title}</p>
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() =>
-                          isFavourite
-                            ? dispatch(addToFavouritesAction(song.id))
-                            : dispatch(removeFromFavouritesAction(song))
-                        }
-                      >
-                        {isFavourite ? <HeartFill /> : <Heart />}
-                      </Button>
+                      {isFavourite ? (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(removeFromFavouritesAction(song.id));
+                          }}
+                        >
+                          <Heart />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            dispatch(addToFavouritesAction(song));
+                          }}
+                        >
+                          <HeartFill color="red" />
+                        </Button>
+                      )}
                     </Col>
                   );
                 })}

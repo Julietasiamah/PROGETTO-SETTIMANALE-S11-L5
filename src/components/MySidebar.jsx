@@ -11,11 +11,9 @@ const MySidebar = () => {
         <Col md={2}>
           <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
             <Container className="flex-column align-items-start">
-              <a>
-                <Navbar.Brand href="index.html">
-                  <img src={Logo} alt="Spotify Logo" width="131" height="40" />
-                </Navbar.Brand>
-              </a>
+              <Navbar.Brand href="index.html">
+                <img src={Logo} alt="Spotify Logo" width="131" height="40" />
+              </Navbar.Brand>
 
               <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded="false" />
               <Navbar.Collapse id="navbarNavAltMarkup">

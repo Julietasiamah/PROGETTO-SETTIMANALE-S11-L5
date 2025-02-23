@@ -13,5 +13,11 @@ export const fetchSearchResultsSuccess = (results) => ({
   payload: results,
 });
 
-export const removeFromFavouritesAction = (fav) => ({ type: "REMOVE_FROM_FAVOURITES", payload: fav._id });
-export const addToFavouritesAction = (fav) => ({ type: "ADD_TO_FAVOURITES", payload: fav });
+export const addToFavouritesAction = (song) => ({
+  type: "ADD_TO_FAVOURITES",
+  payload: song,
+});
+export const removeFromFavouritesAction = (songId) => ({
+  type: "REMOVE_FROM_FAVOURITES",
+  payload: songId,
+});
