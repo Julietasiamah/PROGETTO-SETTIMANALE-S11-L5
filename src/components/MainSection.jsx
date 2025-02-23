@@ -3,7 +3,7 @@ import "../components/MainSection.css";
 import { useEffect, useState } from "react";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavouritesAction, removeFromFavouritesAction } from "../redux/actions";
+import { addToFavouritesAction, removeFromFavouritesAction, setSelectedSongsAction } from "../redux/actions";
 
 const MainSection = () => {
   const [rock, setRock] = useState([]);
@@ -12,6 +12,10 @@ const MainSection = () => {
 
   const dispatch = useDispatch();
   const favourites = useSelector((state) => state.favourites.content);
+
+  const handleSongClick = (song) => {
+    dispatch(setSelectedSongsAction(song));
+  };
 
   const fillMusicSection = async (artistName, songsUpdate) => {
     try {
@@ -44,23 +48,6 @@ const MainSection = () => {
           <a href="#">DISCOVER</a>
         </Col>
 
-        {/* {favourites.length > 0 && (
-          <div id="favouritesSection">
-            <h2>🎵 Canzoni Preferite</h2>
-            <Row>
-              {favourites.map((song) => (
-                <Col key={song.id} className="mb-3">
-                  <img src={song.album.cover_medium} alt={song.title} />
-                  <p>{song.title}</p>
-                  <Button variant="outline-secondary" onClick={() => dispatch(addToFavouritesAction(song.id))}>
-                    <HeartFill color="red" />
-                  </Button>
-                </Col>
-              ))}
-            </Row>
-          </div>
-        )} */}
-
         <Row>
           <Col>
             <div id="rock">
@@ -70,14 +57,14 @@ const MainSection = () => {
                   const isFavourite = favourites.some((fav) => fav.id === song.id);
 
                   return (
-                    <Col key={song.id} className="mb-3">
+                    <Col key={song.id} className="mb-3" onClick={() => handleSongClick(song)}>
                       <img src={song.album.cover_medium} alt={song.title} />
                       <p>{song.title}</p>
                       {isFavourite ? (
                         <Button
                           variant="outline-secondary"
                           onClick={() => {
-                            dispatch(addToFavouritesAction(song.id));
+                            dispatch(removeFromFavouritesAction(song.id));
                           }}
                         >
                           <Heart />
@@ -86,7 +73,7 @@ const MainSection = () => {
                         <Button
                           variant="outline-secondary"
                           onClick={() => {
-                            dispatch(removeFromFavouritesAction(song.id));
+                            dispatch(addToFavouritesAction(song));
                           }}
                         >
                           <HeartFill color="red" />
