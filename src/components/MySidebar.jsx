@@ -17,13 +17,13 @@ const MySidebar = () => {
 
               <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded="false" />
               <Navbar.Collapse id="navbarNavAltMarkup">
-                <Nav className="me-auto" id="nav-link">
-                  <Nav.Link href="#" className="d-flex align-items-center">
-                    <HouseDoorFill />
-                    Home
+                <Nav className="me-auto d-flex flex-column" id="nav-link">
+                  <Nav.Link href="#" className="d-flex align-items-center mb-3">
+                    <HouseDoorFill className="fs-4 " />
+                    <span className="ms-2"> Home</span>
                   </Nav.Link>
                   <Nav.Link href="#" className="d-flex align-items-center">
-                    <BookFill /> Your Library
+                    <BookFill className="fs-4" /> <span className="ms-2">Your Library</span>
                   </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
@@ -34,14 +34,17 @@ const MySidebar = () => {
                   GO
                 </Button>
               </InputGroup>
-              <div className="mt-5">
-                <Button id="sign-up">Sign up</Button>
-                <Button id="login">Login</Button>
-                <span>
-                  <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>
-                </span>
-              </div>
             </Container>
+            <div className="nav-btn text-center">
+              <Button id="sign-up">Sign up</Button>
+              <Button id="login">Login</Button>
+              <div>
+                <a href="#" className="nav-btn">
+                  Cookie Policy
+                </a>
+                |<a href="#"> Privacy</a>
+              </div>
+            </div>
           </Navbar>
         </Col>
       </Row>
