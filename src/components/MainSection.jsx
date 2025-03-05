@@ -67,7 +67,7 @@ const MainSection = () => {
                             dispatch(removeFromFavouritesAction(song.id));
                           }}
                         >
-                          <Heart />
+                          <HeartFill color="red" />
                         </Button>
                       ) : (
                         <Button
@@ -76,7 +76,7 @@ const MainSection = () => {
                             dispatch(addToFavouritesAction(song));
                           }}
                         >
-                          <HeartFill color="red" />
+                          <Heart />
                         </Button>
                       )}
                     </Col>
