@@ -6,10 +6,10 @@ import Play from "../images/play.png";
 import Next from "../images/next.png";
 import Repeat from "../images/repeat.png";
 // import MainSection from "./MainSection";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Player = () => {
-  // const selectedSong = useSelector((state) => state.selectedSong.content);
+  const selectedSong = useSelector((state) => state.selectedSong.content);
 
   return (
     <Container fluid className="fixed-bottom bg-container pt-1" id="container-bg">
@@ -35,14 +35,18 @@ const Player = () => {
                 </a>
               </div>
 
+              <Col>
+                {selectedSong && (
+                  <div className="mt-3 text-center">
+                    <p>
+                      {selectedSong?.title} - {selectedSong?.artist?.name}
+                    </p>
+                  </div>
+                )}
+              </Col>
+
               <ProgressBar className="mt-3" id="progress-bar" />
             </Col>
-            {/* {selectedSong && (
-              <Col md={4} className="songDetails mt-3">
-                <h4>{selectedSong.title}</h4>
-                <p>{selectedSong.artist.name}</p>
-              </Col>
-            )} */}
           </Row>
         </Col>
       </Row>

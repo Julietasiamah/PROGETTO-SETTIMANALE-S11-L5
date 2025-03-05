@@ -50,6 +50,26 @@ const MainSection = () => {
 
         <Row>
           <Col>
+            {favourites.length > 0 && (
+              <div id="favourites">
+                <h4 className="text-secondary mt-3">Canzoni Preferite</h4>
+                <Row className="imgLinks">
+                  {favourites.map((song) => (
+                    <Col key={song.id} className="mb-3">
+                      <p>{song.title}</p>
+                      {/* <Button variant="outline-secondary" onClick={() => dispatch(addToFavouritesAction(song.id))}>
+                        <HeartFill color="red" />
+                      </Button> */}
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            )}
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
             <div id="rock">
               <h2>Rock Classics</h2>
               <Row className=" imgLinks " id="rockSection">
@@ -57,8 +77,13 @@ const MainSection = () => {
                   const isFavourite = favourites.some((fav) => fav.id === song.id);
 
                   return (
-                    <Col key={song.id} className="mb-3" onClick={() => handleSongClick(song)}>
-                      <img src={song.album.cover_medium} alt={song.title} />
+                    <Col key={song.id} className="mb-3">
+                      <img
+                        src={song.album.cover_medium}
+                        alt={song.title}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => handleSongClick(song)}
+                      />
                       <p>{song.title}</p>
                       {isFavourite ? (
                         <Button
@@ -96,7 +121,7 @@ const MainSection = () => {
 
                   return (
                     <Col key={song.id} className="mb-3">
-                      <img src={song.album.cover_medium} alt={song.title} />
+                      <img src={song.album.cover_medium} alt={song.title} style={{ cursor: "pointer" }} />
                       <p>{song.title}</p>
                       {isFavourite ? (
                         <Button
@@ -105,7 +130,7 @@ const MainSection = () => {
                             dispatch(removeFromFavouritesAction(song.id));
                           }}
                         >
-                          <Heart />
+                          <HeartFill color="red" />
                         </Button>
                       ) : (
                         <Button
@@ -114,7 +139,7 @@ const MainSection = () => {
                             dispatch(addToFavouritesAction(song));
                           }}
                         >
-                          <HeartFill color="red" />
+                          <Heart />
                         </Button>
                       )}
                     </Col>
@@ -134,7 +159,7 @@ const MainSection = () => {
 
                   return (
                     <Col key={song.id} className="mb-3">
-                      <img src={song.album.cover_medium} alt={song.title} />
+                      <img src={song.album.cover_medium} alt={song.title} style={{ cursor: "pointer" }} />
                       <p>{song.title}</p>
                       {isFavourite ? (
                         <Button
@@ -143,7 +168,7 @@ const MainSection = () => {
                             dispatch(removeFromFavouritesAction(song.id));
                           }}
                         >
-                          <Heart />
+                          <HeartFill color="red" />
                         </Button>
                       ) : (
                         <Button
@@ -152,7 +177,7 @@ const MainSection = () => {
                             dispatch(addToFavouritesAction(song));
                           }}
                         >
-                          <HeartFill color="red" />
+                          <Heart />
                         </Button>
                       )}
                     </Col>
