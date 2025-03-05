@@ -28,7 +28,6 @@ const MySidebar = () => {
                 </Nav>
               </Navbar.Collapse>
               <InputGroup className="mt-3">
-                <InputGroup.Text id="basic-addon1"></InputGroup.Text>
                 <Form.Control placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" />
                 <Button variant="outline-secondary" className="h-100" size="sm">
                   GO
